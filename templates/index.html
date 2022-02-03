@@ -1,0 +1,402 @@
+{% extends 'shared/_MainLayOut.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Loading animation -->
+    <div class="preloader">
+        <div class="preloader-animation">
+            <div class="preloader-spinner">
+            </div>
+        </div>
+    </div>
+    <!-- /Loading animation -->
+
+    <div id="page" class="page">
+
+
+        <!-- Main Content -->
+        <div id="main" class="site-main">
+            <!-- Page changer wrapper -->
+            <div class="pt-wrapper">
+                <!-- Subpages -->
+                <div class="subpages">
+
+                    <!-- Home Subpage -->
+                    <section class="pt-page" data-id="home">
+                        <div class="section-inner start-page-content">
+                            <div class="page-header">
+                                <div class="row">
+                                    <div class="col-sm-4 col-md-4 col-lg-4">
+                                        <div class="photo">
+                                            <img src="{{ user.image.url }}" alt="">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-8 col-md-8 col-lg-8">
+                                        <div class="title-block">
+                                            <h1>{{ user.name }} {{ user.last_name }}</h1>
+                                            <div class="owl-carousel text-rotation">
+                                                {% for category in categories %}
+                                                    <div class="item">
+                                                        <div class="sp-subtitle">{{ category.category_name }}</div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+
+                                        <div class="social-links">
+                                            <a href="https://github.com/PythonArsalan"><i class="fa fa-github"></i></a>
+                                            <a href="#"><i class="fa fa-stack-overflow"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="page-content">
+                                <div class="row">
+
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="about-me">
+                                            <div class="block-title">
+                                                <h3>About <span>Me</span></h3>
+                                            </div>
+                                            <p>{{ user.about_me_text }}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <ul class="info-list">
+                                            <li><span class="title">Age</span><span class="value">{{ user.age }}</span>
+                                            </li>
+                                            <li><span class="title">Residence</span><span
+                                                    class="value">{{ user.residence }}</span></li>
+                                            <li><span class="title">Address</span><span
+                                                    class="value">{{ user.address }}</span></li>
+                                            <li><span class="title">e-mail</span><span
+                                                    class="value">{{ user.email }}</span></li>
+                                            <li><span class="title">Phone</span><span
+                                                    class="value">{{ user.phone }}</span>
+                                            </li>
+                                            <li><span class="title">Freelance</span><span
+                                                    class="value available">{{ user.freelance }}</span></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End of Home Subpage -->
+
+                    <!-- Resume Subpage -->
+                    <section class="pt-page" data-id="resume">
+                        <div class="section-inner custom-page-content">
+                            <div class="page-header color-1">
+                                <h2>My Skills</h2>
+                            </div>
+                            <div class="page-content">
+                                {% comment %}
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="block">
+                                            <div class="block-title">
+                                                <h3>Education</h3>
+                                            </div>
+
+                                            <div class="timeline">
+                                                <!-- Education 1 -->
+                                                <div class="timeline-item">
+                                                    <h4 class="item-title">Specialization Course</h4>
+                                                    <span class="item-period">2010</span>
+                                                    <span class="item-small">Apple Inc.</span>
+                                                    <p class="item-description">Mauris magna sapien, pharetra
+                                                        consectetur
+                                                        fringilla vitae, interdum sed tortor.</p>
+                                                </div>
+                                                <!-- / Education 1 -->
+
+                                                <!-- Education 2 -->
+                                                <div class="timeline-item">
+                                                    <h4 class="item-title">Specialization Course</h4>
+                                                    <span class="item-period">2010</span>
+                                                    <span class="item-small">Apple Inc.</span>
+                                                    <p class="item-description">Mauris magna sapien, pharetra
+                                                        consectetur
+                                                        fringilla vitae, interdum sed tortor.</p>
+                                                </div>
+                                                <!-- / Education 2 -->
+
+                                                <!-- Education 3 -->
+                                                <div class="timeline-item">
+                                                    <h4 class="item-title">Specialization Course</h4>
+                                                    <span class="item-period">2010</span>
+                                                    <span class="item-small">Apple Inc.</span>
+                                                    <p class="item-description">Mauris magna sapien, pharetra
+                                                        consectetur
+                                                        fringilla vitae, interdum sed tortor.</p>
+                                                </div>
+                                                <!-- / Education 3 -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-6 col-lg-6">
+                                        <div class="block">
+                                            <div class="block-title">
+                                                <h3>Experience</h3>
+                                            </div>
+
+                                            <div class="timeline">
+                                                <!-- Experience 1 -->
+                                                <div class="timeline-item">
+                                                    <h4 class="item-title">Frontend-developer</h4>
+                                                    <span class="item-period">Dec 2012 - Current</span>
+                                                    <span class="item-small">Web Agency</span>
+                                                    <p class="item-description">Mauris magna sapien, pharetra
+                                                        consectetur
+                                                        fringilla vitae, interdum sed tortor.</p>
+                                                </div>
+                                                <!-- / Experience 1 -->
+
+                                                <!-- Experience 2 -->
+                                                <div class="timeline-item">
+                                                    <h4 class="item-title">Web Designer</h4>
+                                                    <span class="item-period">Dec 2011 - Nov 2012</span>
+                                                    <span class="item-small">Apple Inc.</span>
+                                                    <p class="item-description">Mauris magna sapien, pharetra
+                                                        consectetur
+                                                        fringilla vitae, interdum sed tortor.</p>
+                                                </div>
+                                                <!-- / Experience 2 -->
+
+                                                <!-- Experience 3 -->
+                                                <div class="timeline-item">
+                                                    <h4 class="item-title">Graphic Designer</h4>
+                                                    <span class="item-period">Jan 2010 - Dec 2011</span>
+                                                    <span class="item-small">Apple Inc.</span>
+                                                    <p class="item-description">Mauris magna sapien, pharetra
+                                                        consectetur
+                                                        fringilla vitae, interdum sed tortor.</p>
+                                                </div>
+                                                <!-- / Experience 3 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>{% endcomment %}
+
+                                <div class="row">
+                                    {% for category in categories %}
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <div class="block">
+                                                <div class="block-title">
+                                                    <h3>{{ category.category_name }} <span>Skills</span></h3>
+                                                </div>
+
+                                                <div class="skills-info">
+                                                    {% for skill in category.myskills_set.all %}
+                                                        <h4>{{ skill.skill_name }}</h4>
+                                                        <div class="skill-container">
+                                                            <div class="skill-percentage skill-{{ skill.skill_much }}"></div>
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End of Resume Subpage -->
+
+
+                    <!-- Services Subpage -->
+                    <section class="pt-page" data-id="services">
+                        <div class="section-inner custom-page-content">
+                            <div class="page-header color-1">
+                                <h2>Services</h2>
+                            </div>
+                            <div class="page-content">
+                                <!-- My Services -->
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="block-title">
+                                            <h3>My <span>Services</span></h3>
+                                        </div>
+                                    </div>
+
+                                    {% for service in services %}
+                                        <div class="col-sm-6 col-md-3">
+                                            <div class="service-block">
+                                                <div class="service-info">
+                                                    <!--<i class="service-icon fa fa-shopping-cart"></i>-->
+                                                    <div class="service-image">
+                                                        <img src="{{ service.service_image.url }}"
+                                                             alt="Responsive Design"
+                                                             class="mCS_img_loaded">
+                                                    </div>
+                                                    <h4>{{ service.service_name }}</h4>
+                                                    <p>{{ service.service_about }}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                                <!-- End of My Services -->
+
+                                <!-- End of Pricing -->
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End of Services Subpage -->
+
+
+                    <!-- Blog Subpage -->
+                    <section class="pt-page" data-id="blog">
+                        <div class="section-inner custom-page-content">
+                            <div class="page-header color-1">
+                                <h2>Some Projects</h2>
+                            </div>
+                            <div class="page-content">
+
+                                <!-- Blog Posts Grid -->
+                                <div class="blog-masonry two-columns">
+                                    <!-- Blog Post 1 -->
+                                    {% for blog in blogs %}
+                                        <div class="item">
+                                            <div class="blog-card">
+                                                <div class="media-block">
+                                                    <a href="{% url 'blog' blog.id %}">
+                                                        <img class="post-image img-responsive"
+                                                             src="{{ blog.image.url }}"
+                                                             alt="blog-post-1"/>
+                                                        <div class="mask"></div>
+                                                        <div class="post-date"><span class="day">{{ blog.time.day }}</span><span
+                                                                class="month">{{ blog.time.month }}</span>
+                                                            <!--<span class="year">2016</span>-->
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="post-info">
+                                                    <a href="blog-post-1.html"><h4
+                                                            class="blog-item-title">{{ blog.title }}</h4></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    <!-- End of Blog Post 1 -->
+
+                                </div>
+                                <!-- Blog Posts Grid -->
+                            </div>
+                        </div>
+                    </section>
+                    <!-- /Blog Subpage -->
+
+                    <!-- Contact Subpage -->
+                    <section class="pt-page" data-id="contact">
+                        <div class="section-inner custom-page-content">
+                            <div class="page-header color-1">
+                                <h2>Contact</h2>
+                            </div>
+                            <div class="page-content">
+
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="block-title">
+                                            <h3>Get in <span>Touch</span></h3>
+                                        </div>
+                                        <!-- Google Map -->
+                                        <div id="map" class="map"></div>
+                                        <!-- End of Google Map -->
+
+                                        <div class="contact-info-block">
+                                            <div class="ci-icon">
+                                                <i class="fa fa-map-marker"></i>
+                                            </div>
+                                            <div class="ci-text">
+                                                <h5>{{ user.address }}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info-block">
+                                            <div class="ci-icon">
+                                                <i class="fa fa-envelope"></i>
+                                            </div>
+                                            <div class="ci-text">
+                                                <h5>{{ user.email }}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info-block">
+                                            <div class="ci-icon">
+                                                <i class="fa fa-phone"></i>
+                                            </div>
+                                            <div class="ci-text">
+                                                <h5>{{ user.phone }}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="contact-info-block">
+                                            <div class="ci-icon">
+                                                {% if user.freelance != "not available" %}
+                                                    <i class="fa fa-check"></i>
+                                                {% else %}
+                                                    <i class="fa fa-times"></i>
+                                                {% endif %}
+                                            </div>
+                                            <div class="ci-text">
+                                                <h5>Freelance {{ user.freelance.title }}</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="block-title">
+                                            <h3>Contact <span>Form</span></h3>
+                                        </div>
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            <div class="messages"></div>
+
+
+                                            <div class="controls">
+                                                <div class="form-group form-group-with-icon">
+                                                    <i class="fa fa-user"></i>
+                                                    <label>{{ contact_form.full_name.label }}</label>
+                                                    {{ contact_form.full_name }}
+                                                </div>
+
+                                                <div class="form-group form-group-with-icon">
+                                                    <i class="fa fa-envelope"></i>
+                                                    <label>{{ contact_form.email.label }}</label>
+                                                    {{ contact_form.email }}
+                                                </div>
+
+                                                <div class="form-group form-group-with-icon">
+                                                    <i class="fa fa-comment"></i>
+                                                    <label>{{ contact_form.message.label }}</label>
+                                                    {{ contact_form.message }}
+                                                </div>
+
+
+                                                <button type="submit" class="button btn-send">Send Message</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End Contact Subpage -->
+
+                </div>
+            </div>
+            <!-- /Page changer wrapper -->
+        </div>
+        <!-- /Main Content -->
+    </div>
+{% endblock %}
+f

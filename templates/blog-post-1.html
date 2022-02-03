@@ -1,0 +1,44 @@
+{% extends 'shared/_MainLayOut.html' %}
+{% block content %}
+    <div id="page" class="page">
+
+        <!-- Main Content -->
+        <div id="main" class="site-main">
+            <!-- Single Page Content -->
+            <div class="single-page-content">
+                <div class="content-area">
+                    <div class="page-content">
+                        <!-- Blog Entry Content -->
+                        <div class="blog-post-main-image">
+                            <img class="post-image img-responsive" src="{{ blog.image.url }}"
+                                 alt="blog-post-1"/>
+                        </div>
+
+                        <div class="blog-post-content">
+                            <h1>{{ blog.title }}</h1>
+
+                            <div class="entry-meta">
+                            <span class="date"><a href="#"><i
+                                    class="fa fa-fw fa-clock-o"></i>{{ blog.time }}</a></span>
+                                <span class="divider">|</span>
+                                <span class="autor"><a href="#"><i
+                                        class="fa fa-fw fa-user"></i>{{ blog.user.name }} {{ blog.user.last_name }}</a></span>
+
+                            </div>
+
+                            <p>{{ blog.blog_text }}</p>
+                            <ul class="tags">
+                                {% for tag in blog.tag.all %}
+                                    <li><a>{{ tag.tag_name.upper }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <!-- End of Blog Entry Content -->
+                    </div>
+                </div>
+            </div>
+            <!-- End of Single Page Content -->
+        </div>
+        <!-- /Main Content -->
+    </div>
+{% endblock %}
